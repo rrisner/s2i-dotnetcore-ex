@@ -56,10 +56,10 @@
     <p>Interest Rate: 3.5%</p>
     <p>Monthly Payment: $1000</p>
     <p>Months to Payoff: @(months[0].ToString())</p>
-    <p>Total Amount Paid: $@(amounts[0].ToString())</p>
+    <p>Total Amount Paid: $@(System.Math.Round(amounts[0], 2))</p>
     <p><strong>Hypothetical: Pay an additional $2000 at month 12</strong></p>
     <p>Months to Payoff: @(months[1].ToString())</p>
-    <p>Total Amount Paid: $@(amounts[1].ToString())</p>
+    <p>Total Amount Paid: $@(System.Math.Round(amounts[1], 2))</p>
     <p>Months Saved: @(months[0]-months[1])</p>
     <p>Net Savings: $@(System.Math.Round(amounts[0]-amounts[1]-2000, 2))</p>
 
@@ -68,10 +68,10 @@
     <p>Interest Rate: 3.5%</p>
     <p>Monthly Payment: $1000</p>
     <p>Months to Payoff: @(months[2].ToString())</p>
-    <p>Total Amount Paid: $@(amounts[2].ToString())</p>
+    <p>Total Amount Paid: $@(System.Math.Round(amounts[2], 2))</p>
     <p><strong>Hypothetical: Pay an additional $2000 at month 24</strong></p>
     <p>Months to Payoff: @(months[3].ToString())</p>
-    <p>Total Amount Paid: $@(amounts[3].ToString())</p>
+    <p>Total Amount Paid: $@(System.Math.Round(amounts[3], 2))</p>
     <p>Months Saved: @(months[2]-months[3])</p>
     <p>Net Savings: $@(System.Math.Round(amounts[2]-amounts[3]-2000, 2))</p>
 
@@ -80,10 +80,10 @@
     <p>Interest Rate: 3.25%</p>
     <p>Monthly Payment: $1500</p>
     <p>Months to Payoff: @(months[4].ToString())</p>
-    <p>Total Amount Paid: $@(amounts[4].ToString())</p>
+    <p>Total Amount Paid: $@(System.Math.Round(amounts[4], 2))</p>
     <p><strong>Hypothetical: Pay an additional $5000 at month 60</strong></p>
     <p>Months to Payoff: @(months[5].ToString())</p>
-    <p>Total Amount Paid: $@(amounts[5].ToString())</p>
+    <p>Total Amount Paid: $@(System.Math.Round(amounts[5], 2))</p>
     <p>Months Saved: @(months[4]-months[5])</p>
     <p>Net Savings: $@(System.Math.Round(amounts[4]-amounts[5]-5000, 2))</p>
 
@@ -92,10 +92,10 @@
     <p>Interest Rate: 3.25%</p>
     <p>Monthly Payment: $1500</p>
     <p>Months to Payoff: @(months[6].ToString())</p>
-    <p>Total Amount Paid: $@(amounts[6].ToString())</p>
+    <p>Total Amount Paid: $@(System.Math.Round(amounts[6], 2))</p>
     <p><strong>Hypothetical: Pay an additional $5000 at month 120</strong></p>
     <p>Months to Payoff: @(months[7].ToString())</p>
-    <p>Total Amount Paid: $@(amounts[7].ToString())</p>
+    <p>Total Amount Paid: $@(System.Math.Round(amounts[7], 2))</p>
     <p>Months Saved: @(months[6]-months[7])</p>
     <p>Net Savings: $@(System.Math.Round(amounts[6]-amounts[7]-5000, 2))</p>
 
