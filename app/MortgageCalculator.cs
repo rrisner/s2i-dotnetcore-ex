@@ -42,7 +42,7 @@ public class MortgageCalculator
             return 999999999;
         }
 
-        return sum, counter;
+        return (sum, counter);
     }
 
     public (double, int) sumTotalCostsWithExtraPayments()
@@ -71,7 +71,7 @@ public class MortgageCalculator
             return 999999999;
         }
 
-        return sum, counter;
+        return (sum, counter);
     }
 
 
