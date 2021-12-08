@@ -1,6 +1,25 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
     double variable = app.Program.richardsMethod();
+
+    Validation.RequireField("companyname", "Company name is required.");
+    Validation.RequireField("contactname", "Contact name is required.");
+    Validation.RequireField("employees", "Employee count is required.");
+    Validation.Add("employees", Validator.Integer());
+
+    if (IsPost)  {
+        var companyname = Request.Form["companyname"];
+        var contactname = Request.Form["contactname"];
+        var employeecount = Request.Form["employees"];
+        if(Validation.IsValid()){
+            <text>
+              You entered: <br />
+              Company Name: @companyname <br />
+              Contact Name: @contactname <br />
+              Employee Count: @employeecount <br />
+            </text>
+        }
+    }
 }
 
 <div class="text-center">
@@ -9,6 +28,37 @@
     <p>Hi, my name is Richard and I am having a hard time with this project!</p>
     <p>This came from a method call: @variable</p>
     <p>The time is: @(System.DateTime.Now.ToString())</p>
+
+
+    <head>
+        <title>Customer Form</title>
+    </head>
+    <body>
+  <form method="post">
+    <fieldset>
+      <legend>Add Customer</legend>
+      <div>
+         <label for="CompanyName">Company Name:</label>
+         <input type="text" name="CompanyName" value="" />
+         @Html.ValidationMessage("companyname")
+      </div>
+      <div>
+         <label for="ContactName">Contact Name:</label>
+         <input type="text" name="ContactName" value="" />
+         @Html.ValidationMessage("contactname")
+      </div>
+      <div>
+         <label for="Employees">Employee Count:</label>
+         <input type="text" name="Employees" value="" />
+         @Html.ValidationMessage("employees")
+      </div>
+      <div>
+         <label>&nbsp;</label>
+         <input type="submit" value="Submit" class="submit" />
+      </div>
+    </fieldset>
+  </form>
+</body>
 
 </div>
 
