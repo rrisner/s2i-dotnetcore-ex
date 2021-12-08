@@ -2,48 +2,88 @@
     ViewData["Title"] = "Home Page";
     double variable = app.Program.richardsMethod();
 
+    System.Collections.Generic.List<double> amounts = new System.Collections.Generic.List<double>();
+    System.Collections.Generic.List<int> months = new System.Collections.Generic.List<int>();
+    double tempDouble;
+    int tempInt;
+
+    MortgageCalculator calc1A = new MortgageCalculator(180000, .035, 1000);
+    calc1A.addExtraPayment(12, 2000);
+
+    tempDouble, tempInt = calc1A.sumTotalCosts();
+    amounts.Add(tempDouble);
+    months.Add(tempInt);
+    tempDouble, tempInt = calc1A.sumTotalCostsWithExtraPayments();
+
+    MortgageCalculator calc1B = new MortgageCalculator(180000, .035, 1000);
+    calc1B.addExtraPayment(24, 2000);
+
+    tempDouble, tempInt = calc1B.sumTotalCosts();
+    amounts.Add(tempDouble);
+    months.Add(tempInt);
+    tempDouble, tempInt = calc1B.sumTotalCostsWithExtraPayments();
+
+    MortgageCalculator calc2A = new MortgageCalculator(300000, .0325, 1500);
+    calc2A.addExtraPayment(60, 5000);
+
+    tempDouble, tempInt = calc2A.sumTotalCosts();
+    amounts.Add(tempDouble);
+    months.Add(tempInt);
+    tempDouble, tempInt = calc2A.sumTotalCostsWithExtraPayments();
+
+    MortgageCalculator calc2B = new MortgageCalculator(300000, .0325, 1500);
+    calc2B.addExtraPayment(120, 5000);
+
+    tempDouble, tempInt = calc2B.sumTotalCosts();
+    amounts.Add(tempDouble);
+    months.Add(tempInt);
+    tempDouble, tempInt = calc2B.sumTotalCostsWithExtraPayments();
+
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    <p>Hi, my name is Richard and I am having a hard time with this project!</p>
-    <p>This came from a method call: @variable</p>
-    <p>The time is: @(System.DateTime.Now.ToString())</p>
+    <h1 class="display-4">Richard's Simulated Mortgate Payoff Calculator</h1>
+    <p>Hello! My name is Richard. I unfortunately do not yet have enough experience with HTML to return user input to my program, but I can still provide a simulated experience by calling my methods with preselected values. Enjoy!</p>
 
+    <h2>Scenario 1</h2>
+    <p>Principal: $180,000</p>
+    <p>Interest Rate: 3.5%</p>
+    <p>Monthly Payment: $1000</p>
+    <p>Months to Payoff: @(months[0].ToString())</p>
+    <p>Total Amount Paid: $@(amounts[0].ToString())</p>
+    <p><strong>Hypothetical: Pay an additional $2000 at month 12</strong></p>
+    <p>Months to Payoff: @(months[1].ToString())</p>
+    <p>Total Amount Paid: $@(amounts[1].ToString())</p>
+    
+    <h2>Scenario 2</h2>
+    <p>Principal: $180,000</p>
+    <p>Interest Rate: 3.5%</p>
+    <p>Monthly Payment: $1000</p>
+    <p>Months to Payoff: @(months[2].ToString())</p>
+    <p>Total Amount Paid: $@(amounts[2].ToString())</p>
+    <p><strong>Hypothetical: Pay an additional $2000 at month 24</strong></p>
+    <p>Months to Payoff: @(months[3].ToString())</p>
+    <p>Total Amount Paid: $@(amounts[3].ToString())</p>
 
-    <head>
-        <title>Customer Form</title>
-    </head>
-    <body>
-  <form method="post">
-    <fieldset>
-      <legend>Add Customer</legend>
-      <div>
-         <label for="CompanyName">Company Name:</label>
-         <input type="text" name="CompanyName" value="" />
-         @Html.ValidationMessage("companyname")
-      </div>
-      <div>
-         <label for="ContactName">Contact Name:</label>
-         <input type="text" name="ContactName" value="" />
-         @Html.ValidationMessage("contactname")
-      </div>
-      <div>
-         <label for="Employees">Employee Count:</label>
-         <input type="text" name="Employees" value="" />
-         @Html.ValidationMessage("employees")
-      </div>
-      <div>
-         <label>&nbsp;</label>
-         <input type="submit" value="Submit" class="submit" />
-      </div>
-    </fieldset>
-  </form>
-</body>
+    <h2>Scenario 3</h2>
+    <p>Principal: $300,000</p>
+    <p>Interest Rate: 3.25%</p>
+    <p>Monthly Payment: $1500</p>
+    <p>Months to Payoff: @(months[4].ToString())</p>
+    <p>Total Amount Paid: $@(amounts[4].ToString())</p>
+    <p><strong>Hypothetical: Pay an additional $5000 at month 60</strong></p>
+    <p>Months to Payoff: @(months[5].ToString())</p>
+    <p>Total Amount Paid: $@(amounts[5].ToString())</p>
 
-
-    <p>Last time you entered @(cname + ", " + @coname + ", and " + @eee).</p>
+    <h2>Scenario 4</h2>
+    <p>Principal: $300,000</p>
+    <p>Interest Rate: 3.25%</p>
+    <p>Monthly Payment: $1500</p>
+    <p>Months to Payoff: @(months[6].ToString())</p>
+    <p>Total Amount Paid: $@(amounts[6].ToString())</p>
+    <p><strong>Hypothetical: Pay an additional $5000 at month 120</strong></p>
+    <p>Months to Payoff: @(months[7].ToString())</p>
+    <p>Total Amount Paid: $@(amounts[7].ToString())</p>
 
 </div>
 
