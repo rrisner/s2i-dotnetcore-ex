@@ -43,7 +43,7 @@ public class MortgageCalculator
             return (999999999, counter);
         }
 
-        return (System.Math.Round(sum, 2), counter);
+        return (sum, counter);
     }
 
     public (double, int) sumTotalCostsWithExtraPayments()
@@ -72,7 +72,7 @@ public class MortgageCalculator
             return (999999999, counter);
         }
 
-        return (System.Math.Round(sum, 2), counter);
+        return (sum, counter);
     }
 
 
