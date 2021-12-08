@@ -1,12 +1,14 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    double variable = app.Program.richardsMethod();
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
     <p>Hi, my name is Richard and I am having a hard time with this project!</p>
-    <p>Here is a method call: </p>
-    <script type = "text/javascript" src = "./wwwroot/js/site.js">richardsMethod()</script>
+    <p>This came from a method call: @variable</p>
+    <p>The time is: @(System.DateTime.Now.ToString())</p>
+
 </div>
 

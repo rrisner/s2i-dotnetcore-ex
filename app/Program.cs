@@ -22,5 +22,12 @@ namespace app
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+
+        public static double richardsMethod()
+        {
+            return 2 + 2;
+        }  
     }
+
+    
 }
