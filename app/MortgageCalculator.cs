@@ -33,7 +33,7 @@ public class MortgageCalculator
         while(residual > 0 && counter++ < repeatLimit)
         {
             residual *= (1 + interestRate);
-            payment = residual <= monthlyPayment ? monthlyPayment : residual;
+            payment = residual >= monthlyPayment ? monthlyPayment : residual;
             residual -= payment;
             sum += payment;
         }
@@ -62,7 +62,7 @@ public class MortgageCalculator
                 residual -= (double)extraPayments[counter];
                 sum += (double)extraPayments[counter];
             }
-            payment = residual <= monthlyPayment ? monthlyPayment : residual;
+            payment = residual >= monthlyPayment ? monthlyPayment : residual;
             residual -= payment;
             sum += payment;
         }
