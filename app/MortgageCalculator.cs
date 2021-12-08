@@ -5,7 +5,7 @@ public class MortgageCalculator
 {
     double interestRate = 0;
     double principal = 0;
-    double payment = 0;
+    double monthlyPayment = 0;
 
     Hashtable extraPayments = new Hashtable();
 
@@ -14,7 +14,7 @@ public class MortgageCalculator
     {
         this.principal = principal;
         this.interestRate = interestRate;
-        this.payment = monthlyPayment;
+        this.monthlyPayment = monthlyPayment;
     }
 
     public void addExtraPayment(int month, double amount)
@@ -26,7 +26,7 @@ public class MortgageCalculator
     {
         double sum = 0;
         double residual = principal;
-        double payment = payment;
+        double payment = monthlyPayment;
         int counter = 0;
         int repeatLimit = 100000;
 
@@ -40,7 +40,7 @@ public class MortgageCalculator
 
         if (counter == repeatLimit) 
         {
-            return 999999999;
+            return (999999999, counter);
         }
 
         return (sum, counter);
@@ -50,7 +50,7 @@ public class MortgageCalculator
     {
         double sum = 0;
         double residual = principal;
-        double payment = payment;
+        double payment = monthlyPayment;
         int counter = 0;
         int repeatLimit = 100000;
 
@@ -69,7 +69,7 @@ public class MortgageCalculator
 
         if (counter == repeatLimit) 
         {
-            return 999999999;
+            return (999999999, counter);
         }
 
         return (sum, counter);
