@@ -19,7 +19,7 @@ public class MortgageCalculator
 
     public void addExtraPayment(int month, double amount)
     {
-        extraPayments.put(month, amount);
+        extraPayments.Add(month, amount);
     }
 
     public (double, int) sumTotalCosts()
@@ -59,8 +59,8 @@ public class MortgageCalculator
             residual *= (1 + interestRate);
             if (extraPayments.Contains(counter))
             {
-                residual -= extraPayments.get(counter);
-                sum += extraPayments.get(counter);
+                residual -= extraPayments[counter];
+                sum += extraPayments[counter];
             }
             payment = residual <= monthlyPayment ? monthlyPayment : residual;
             residual -= payment;
