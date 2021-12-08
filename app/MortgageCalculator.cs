@@ -13,7 +13,7 @@ public class MortgageCalculator
     public MortgageCalculator(double principal, double interestRate, double monthlyPayment)
     {
         this.principal = principal;
-        this.interestRate = interestRate;
+        this.interestRate = interestRate / 12.0;
         this.monthlyPayment = monthlyPayment;
     }
 
