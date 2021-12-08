@@ -60,7 +60,9 @@
     <p><strong>Hypothetical: Pay an additional $2000 at month 12</strong></p>
     <p>Months to Payoff: @(months[1].ToString())</p>
     <p>Total Amount Paid: $@(amounts[1].ToString())</p>
-    
+    <p>Months Saved: @(months[1]-months[0])</p>
+    <p>Net Savings: $@(amounts[1]-amounts[0]-2000)</p>
+
     <h2>Scenario 2</h2>
     <p>Principal: $180,000</p>
     <p>Interest Rate: 3.5%</p>
@@ -70,6 +72,8 @@
     <p><strong>Hypothetical: Pay an additional $2000 at month 24</strong></p>
     <p>Months to Payoff: @(months[3].ToString())</p>
     <p>Total Amount Paid: $@(amounts[3].ToString())</p>
+    <p>Months Saved: @(months[3]-months[2])</p>
+    <p>Net Savings: $@(amounts[3]-amounts[2]-2000)</p>
 
     <h2>Scenario 3</h2>
     <p>Principal: $300,000</p>
@@ -80,6 +84,8 @@
     <p><strong>Hypothetical: Pay an additional $5000 at month 60</strong></p>
     <p>Months to Payoff: @(months[5].ToString())</p>
     <p>Total Amount Paid: $@(amounts[5].ToString())</p>
+    <p>Months Saved: @(months[5]-months[4])</p>
+    <p>Net Savings: $@(amounts[5]-amounts[4]-5000)</p>
 
     <h2>Scenario 4</h2>
     <p>Principal: $300,000</p>
@@ -90,6 +96,8 @@
     <p><strong>Hypothetical: Pay an additional $5000 at month 120</strong></p>
     <p>Months to Payoff: @(months[7].ToString())</p>
     <p>Total Amount Paid: $@(amounts[7].ToString())</p>
+    <p>Months Saved: @(months[7]-months[6])</p>
+    <p>Net Savings: $@(amounts[7]-amounts[6]-5000)</p>
 
 </div>
 
