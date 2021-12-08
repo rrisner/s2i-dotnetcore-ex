@@ -4,40 +4,46 @@
 
     System.Collections.Generic.List<double> amounts = new System.Collections.Generic.List<double>();
     System.Collections.Generic.List<int> months = new System.Collections.Generic.List<int>();
-    double tempDouble;
-    int tempInt;
 
     MortgageCalculator calc1A = new MortgageCalculator(180000, .035, 1000);
     calc1A.addExtraPayment(12, 2000);
 
-    tempDouble, tempInt = calc1A.sumTotalCosts();
-    amounts.Add(tempDouble);
-    months.Add(tempInt);
-    tempDouble, tempInt = calc1A.sumTotalCostsWithExtraPayments();
+    var tuple = calc1A.sumTotalCosts();
+    amounts.Add(tuple.Item1);
+    months.Add(tuple.Item2);
+    tuple = calc1A.sumTotalCostsWithExtraPayments();
+    amounts.Add(tuple.Item1);
+    months.Add(tuple.Item2);
 
     MortgageCalculator calc1B = new MortgageCalculator(180000, .035, 1000);
     calc1B.addExtraPayment(24, 2000);
 
-    tempDouble, tempInt = calc1B.sumTotalCosts();
-    amounts.Add(tempDouble);
-    months.Add(tempInt);
-    tempDouble, tempInt = calc1B.sumTotalCostsWithExtraPayments();
+    tuple = calc1B.sumTotalCosts();
+    amounts.Add(tuple.Item1);
+    months.Add(tuple.Item2);
+    tuple = calc1B.sumTotalCostsWithExtraPayments();
+    amounts.Add(tuple.Item1);
+    months.Add(tuple.Item2);
 
     MortgageCalculator calc2A = new MortgageCalculator(300000, .0325, 1500);
     calc2A.addExtraPayment(60, 5000);
 
-    tempDouble, tempInt = calc2A.sumTotalCosts();
-    amounts.Add(tempDouble);
-    months.Add(tempInt);
-    tempDouble, tempInt = calc2A.sumTotalCostsWithExtraPayments();
+    tuple = calc2A.sumTotalCosts();
+    amounts.Add(tuple.Item1);
+    months.Add(tuple.Item2);
+    tuple = calc2A.sumTotalCostsWithExtraPayments();
+    amounts.Add(tuple.Item1);
+    months.Add(tuple.Item2);
 
     MortgageCalculator calc2B = new MortgageCalculator(300000, .0325, 1500);
     calc2B.addExtraPayment(120, 5000);
 
-    tempDouble, tempInt = calc2B.sumTotalCosts();
-    amounts.Add(tempDouble);
-    months.Add(tempInt);
-    tempDouble, tempInt = calc2B.sumTotalCostsWithExtraPayments();
+    tuple = calc2B.sumTotalCosts();
+    amounts.Add(tuple.Item1);
+    months.Add(tuple.Item2);
+    tuple = calc2B.sumTotalCostsWithExtraPayments();
+    amounts.Add(tuple.Item1);
+    months.Add(tuple.Item2);
 
 }
 
