@@ -59,8 +59,8 @@ public class MortgageCalculator
             residual *= (1 + interestRate);
             if (extraPayments.Contains(counter))
             {
-                residual -= extraPayments[counter];
-                sum += extraPayments[counter];
+                residual -= (double)extraPayments[counter];
+                sum += (double)extraPayments[counter];
             }
             payment = residual <= monthlyPayment ? monthlyPayment : residual;
             residual -= payment;
