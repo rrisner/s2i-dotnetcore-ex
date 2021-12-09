@@ -52,6 +52,13 @@
     <h1 class="display-4">Richard's Simulated Mortgate Payoff Calculator</h1>
     <p>Hello! My name is Richard. I unfortunately do not yet have enough experience with HTML to return user input to my program, but I can still provide a simulated experience by calling my methods with preselected values. Enjoy!</p>
 
+    <p>These are the employees I know about so far:</p>
+    @foreach (string every in app.Models.EmployeeTest.knownEmployees)
+    {
+        <p>Next employee is: @every</p>
+    }
+
+
     @using (Html.BeginForm()) {
         @Html.ValidationSummary(true)
 

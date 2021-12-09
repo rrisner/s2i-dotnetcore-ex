@@ -35,6 +35,7 @@ namespace app.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
         
+        [HttpPost]
         public ActionResult Create(FormCollection formCollection)
         {
             foreach (string key in formCollection.Keys)
@@ -42,7 +43,10 @@ namespace app.Controllers
                 Response.WriteAsync("Key = " + key + "\t");
                 Response.WriteAsync(formCollection[key]);
                 Response.WriteAsync("<br/>");
+
+                app.Models.EmployeeTest.knownEmployees.Add(formCollection[key]);
             }
+
 
             return View();
         }
