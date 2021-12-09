@@ -51,6 +51,10 @@ namespace app.Controllers
             {
                 app.Models.EmployeeTest.knownEmployees.Add("A button was pressed, but I didn't get any data.");
             }
+            else if (formCollection == null)
+            {
+                app.Models.EmployeeTest.knownEmployees.Add("The button was pressed, but it did not return a FormCollection.");
+            }
                 
 
             //return Content();
