@@ -68,5 +68,13 @@ namespace app.Controllers
             //return Content();
             return View();
         }
+
+        public ActionResult Create(EmployeeTest testE)
+        {
+            app.Models.EmployeeTest.knownEmployees.Add("The form returned the Employee model itself: " + testE.Name);
+         
+            //return Content();
+            return View();
+        }
     }
 }
