@@ -66,11 +66,11 @@
 
         <fieldset>
             <legend>Employee</legend>
-            <div clas="editor-label">
+            <div class="editor-label">
             @Html.LabelFor(model => model.Name)
             </div>
-            <div clas="editor-label">
-            @Html.EditorFor(model => model.Name)
+            <div class="editor-label">
+            @Html.TextBoxFor(model => model.Name)
             @Html.ValidationMessageFor(model => model.Name)
             </div>
 
