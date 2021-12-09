@@ -37,11 +37,11 @@ namespace app.Controllers
         
         public ActionResult Create(FormCollection formCollection)
         {
-            foreach (string key in formCollection.AllKeys)
+            foreach (string key in formCollection.Keys)
             {
-                Response.Write("Key = " + key + "\t");
-                Response.Write(formCollection[key]);
-                Response.Write("<br/>");
+                Response.WriteAsync("Key = " + key + "\t");
+                Response.WriteAsync(formCollection[key]);
+                Response.WriteAsync("<br/>");
             }
 
             return View();
