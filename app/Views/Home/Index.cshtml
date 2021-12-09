@@ -51,6 +51,27 @@
     <h1 class="display-4">Richard's Simulated Mortgate Payoff Calculator</h1>
     <p>Hello! My name is Richard. I unfortunately do not yet have enough experience with HTML to return user input to my program, but I can still provide a simulated experience by calling my methods with preselected values. Enjoy!</p>
 
+    @using (Html.BeginForm()) {
+        @Html.ValidationSummary(true)
+
+        <fieldset>
+            <legend>Employee</legend>
+            <div clas="editor-label">
+            @Html.LabelFor(model => model.Name)
+            </div>
+            <div clas="editor-label">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+            </div>
+
+            <p>
+                <input type="submit" value="Create" />
+            </p>
+
+        </fieldset>
+    }
+
+
     <h2>Scenario 1</h2>
     <p>Principal: $180,000</p>
     <p>Interest Rate: 3.5%</p>

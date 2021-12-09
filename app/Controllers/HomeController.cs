@@ -33,5 +33,17 @@ namespace app.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+        
+        public ActionResult Create(FormCollection formCollection)
+        {
+            foreach (string key in formCollection.AllKeys)
+            {
+                Response.Write("Key = " + key + "\t")
+                Response.Write(formCollection[key]);
+                Response.Write("<br/>");
+            }
+
+            return View();
+        }
     }
 }
