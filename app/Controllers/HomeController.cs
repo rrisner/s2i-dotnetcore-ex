@@ -60,5 +60,21 @@ namespace app.Controllers
             //return Content();
             return View();
         }
+        [HttpPost]
+        public ActionResult Create()
+        {
+            app.Models.EmployeeTest.knownEmployees.Add("An HTTP Post operation occurred, but I got no data from the form.");
+         
+            //return Content();
+            return View();
+        }
+        [HttpGet]
+        public ActionResult Create()
+        {
+            app.Models.EmployeeTest.knownEmployees.Add("An HTTP Get operation occurred, but I got no data from the form.");
+         
+            //return Content();
+            return View();
+        }
     }
 }
