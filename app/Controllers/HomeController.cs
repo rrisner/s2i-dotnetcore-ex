@@ -47,7 +47,13 @@ namespace app.Controllers
                 app.Models.EmployeeTest.knownEmployees.Add(formCollection[key]);
             }
 
+            if (formCollection.Keys.Count == 0)
+            {
+                app.Models.EmployeeTest.knownEmployees.Add("A button was pressed, but I didn't get any data.");
+            }
+                
 
+            //return Content();
             return View();
         }
     }
