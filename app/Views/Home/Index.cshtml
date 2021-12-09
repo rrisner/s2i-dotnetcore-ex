@@ -46,6 +46,8 @@
     amounts.Add(tuple.Item1);
     months.Add(tuple.Item2);
 
+    app.Models.EmployeeTest.knownEmployees.Add("You last reloaded the page at " + System.DateTime.Now.ToString()); //add at least some data to collection for debug
+
 }
 
 <div class="text-center">
