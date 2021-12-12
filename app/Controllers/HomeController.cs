@@ -78,6 +78,19 @@ namespace app.Controllers
         }*/
 
         [HttpPost]
+        public ActionResult SetMortgageDetails(app.Models.Mortgage mortgage)
+        {
+            Mortgage.examples.Add("That worked!!!");
+            Mortgage.examples.Add(mortgage.Principal.ToString());
+            Mortgage.examples.Add(mortgage.InterestRate.ToString());
+            Mortgage.examples.Add(mortgage.MonthlyPayment.ToString());
+            Mortgage.examples.Add(mortgage.ExtraPayment.ToString());
+            Mortgage.examples.Add(mortgage.ExtraPaymentMonth.ToString());
+
+            return View();
+        }
+
+        [HttpPost]
         public ActionResult SetMortgageDetails(double Principal, double InterestRate, double MonthlyPayment, double ExtraPayment, double ExtraPaymentMonth)
         {
             Mortgage.examples.Add("That worked!!!");

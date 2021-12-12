@@ -45,12 +45,10 @@
     amounts.Add(tuple.Item1);
     months.Add(tuple.Item2);
 
-
 }
 
 <div class="text-center">
     <h1 class="display-4">Richard's Simulated Mortgate Payoff Calculator</h1>
-    <!--><p>Hello! My name is Richard. I unfortunately do not yet have enough experience with HTML to return user input to my program, but I can still provide a simulated experience by calling my methods with preselected values. Enjoy!</p></!-->
 
     <p>These are the Mortgages I know about so far:</p>
     @foreach (string every in app.Models.Mortgage.examples)
@@ -58,51 +56,44 @@
         <p>Next mortgage is: @every</p>
     }
 
-
-    <!-->@using (Html.BeginForm()) {
-        @Html.ValidationSummary(true)
-
-        <fieldset>
-            <legend>Employee</legend>
-            <div class="editor-label">
-            @Html.LabelFor(model => model.Principal)
-            </div>
-            <div class="editor-label">
-            @Html.TextBoxFor(model => model.Principal)
-            @Html.ValidationMessageFor(model => model.Principal)
-            </div>
-
-            <p>
-                <input type="submit" value="Create" />
-            </p>
-
-        </fieldset>
-    }</!-->
-
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post)) {
         <fieldset>
         <label>Principal</label>
-        <input type="number" name="Principal" placeholder="Mortgage Principal Amount" />
+        @Html.TextBoxFor(m => m.Principal)
         <br />
-
         <label>Interest Rate</label>
-        <input type="number" name="InterestRate" placeholder="Interest Rate (3.0 = 3%)" />
+        @Html.TextBoxFor(m => m.InterestRate)
         <br />
-
         <label>Monthly Payment</label>
-        <input type="number" name="MonthlyPayment" placeholder="Monthly Payment Amount" />
+        @Html.TextBoxFor(m => m.MonthlyPayment)
         <br />
-
         <label>Extra Payment</label>
-        <input type="number" name="ExtraPayment" placeholder="Extra Payment Amount" />
+        @Html.TextBoxFor(m => m.ExtraPayment)
+        <br />
+        <label>Extra Payment Month</label>
+        @Html.TextBoxFor(m => m.ExtraPaymentMonth)
+
+        <input type="text" name="Principal" placeholder="Mortgage Principal Amount" />
         <br />
 
-        <label>Extra Payment Month</label>
-        <input type="number" name="ExtraPaymentMonth" placeholder="Month at which to make payment" />
+        
+        <input type="text" name="InterestRate" placeholder="Interest Rate (3.0 = 3%)" />
+        <br />
+
+
+        <input type="text" name="MonthlyPayment" placeholder="Monthly Payment Amount" />
+        <br />
+
+        
+        <input type="text" name="ExtraPayment" placeholder="Extra Payment Amount" />
+        <br />
+
+        
+        <input type="text" name="ExtraPaymentMonth" placeholder="Month at which to make payment" />
         <br />
 
         <p>
-            <input type="submit" value="SetMortgageDetails" method="post"/>
+            <input type="submit" value="Calculate" name="SetMortgageDetails" method="post"/>
         </p>
         </fieldset>
     }
