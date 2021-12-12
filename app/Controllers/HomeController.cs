@@ -81,15 +81,15 @@ namespace app.Controllers
         public ActionResult SetMortgageDetails(app.Models.Mortgage mortgage)
         {
             double principal, rate, payment, extra;
-            double.TryParse(mortage.Principal, principal);
-            double.TryParse(mortage.InterestRate, rate);
-            double.TryParse(mortage.MonthlyPayment, payment);
-            double.TryParse(mortgage.ExtraPayment, extra);
+            double.TryParse(mortgage.Principal, out principal);
+            double.TryParse(mortgage.InterestRate, out rate);
+            double.TryParse(mortgage.MonthlyPayment, out payment);
+            double.TryParse(mortgage.ExtraPayment, out extra);
             int paymentMonth;
-            int.TryParse(mortgage.ExtraPaymentMonth, paymentMonth);
+            int.TryParse(mortgage.ExtraPaymentMonth, out paymentMonth);
             
             MortgageCalculator recent = new MortgageCalculator(principal, rate, payment);
-            recent.addExtraPayment(paymentMonth, extra);
+            recent.addExtraPayment(paymentMonth, out extra);
 
             Mortgage.examples.Add(recent);
 
