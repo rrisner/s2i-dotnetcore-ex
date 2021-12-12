@@ -80,12 +80,25 @@ namespace app.Controllers
         [HttpPost]
         public ActionResult SetMortgageDetails(app.Models.Mortgage mortgage)
         {
-            Mortgage.examples.Add("That worked!!!");
+            double principal, rate, payment, extra;
+            double.TryParse(mortage.Principal, principal);
+            double.TryParse(mortage.InterestRate, rate);
+            double.TryParse(mortage.MonthlyPayment, payment);
+            double.TryParse(mortgage.ExtraPayment, extra);
+            int paymentMonth;
+            int.TryParse(mortgage.ExtraPaymentMonth, paymentMonth);
+            
+            MortgageCalculator recent = new MortgageCalculator(principal, rate, payment);
+            recent.addExtraPayment(paymentMonth, extra);
+
+            Mortgage.examples.Add(recent);
+
+            /*Mortgage.examples.Add("That worked!!!");
             Mortgage.examples.Add(mortgage.Principal.ToString());
             Mortgage.examples.Add(mortgage.InterestRate.ToString());
             Mortgage.examples.Add(mortgage.MonthlyPayment.ToString());
             Mortgage.examples.Add(mortgage.ExtraPayment.ToString());
-            Mortgage.examples.Add(mortgage.ExtraPaymentMonth.ToString());
+            Mortgage.examples.Add(mortgage.ExtraPaymentMonth.ToString());*/
 
             return View();
         }

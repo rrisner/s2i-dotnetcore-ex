@@ -48,13 +48,10 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Richard's Simulated Mortgate Payoff Calculator</h1>
+    <h1 class="display-4">Richard's Mortgate Payoff Estimation Calculator</h1>
+    <p>Fall 2021 CSC227-0001 Cloud Application Development</p>
+    <p>Try entering your own values into the form, or view examples below.</p>
 
-    <p>These are the Mortgages I know about so far:</p>
-    @foreach (string every in app.Models.Mortgage.examples)
-    {
-        <p>Next mortgage is: @every</p>
-    }
 
     @using (Html.BeginForm("SetMortgageDetails", "Home", FormMethod.Post)) {
         <fieldset>

@@ -3,37 +3,43 @@ using System.Collections;
 
 public class MortgageCalculator 
 {
-    double interestRate = 0;
-    double principal = 0;
-    double monthlyPayment = 0;
+    public double InterestRate {get;set;} = 0;
+    public double OriginalInterestRate {get;set;} = 0;
+    public double Principal {get;set;} = 0;
+    public double MonthlyPayment {get;set;} = 0;
+    public int ExtraPaymentMonth {get;set;} = 0;
+    public double ExtraPaymentAmount {get;set;} = 0;
 
     Hashtable extraPayments = new Hashtable();
 
     public MortgageCalculator() {}
-    public MortgageCalculator(double principal, double interestRate, double monthlyPayment)
+    public MortgageCalculator(double Principal, double InterestRate, double MonthlyPayment)
     {
-        this.principal = principal;
-        this.interestRate = interestRate / 12.0;
-        this.monthlyPayment = monthlyPayment;
+        this.Principal = Principal;
+        this.OriginalInterestRate = InterestRate;
+        this.InterestRate = InterestRate / 12.0;
+        this.MonthlyPayment = MonthlyPayment;
     }
 
     public void addExtraPayment(int month, double amount)
     {
         extraPayments.Add(month, amount);
+        ExtraPaymentMonth = month;
+        ExtraPaymentAmount = amount;
     }
 
     public (double, int) sumTotalCosts()
     {
         double sum = 0;
-        double residual = principal;
-        double payment = monthlyPayment;
+        double residual = Principal;
+        double payment = MonthlyPayment;
         int counter = 0;
         int repeatLimit = 100000;
 
         while(residual > 0 && counter++ < repeatLimit)
         {
-            residual *= (1 + interestRate);
-            payment = residual >= monthlyPayment ? monthlyPayment : residual;
+            residual *= (1 + InterestRate);
+            payment = residual >= MonthlyPayment ? MonthlyPayment : residual;
             residual -= payment;
             sum += payment;
         }
@@ -49,20 +55,20 @@ public class MortgageCalculator
     public (double, int) sumTotalCostsWithExtraPayments()
     {
         double sum = 0;
-        double residual = principal;
-        double payment = monthlyPayment;
+        double residual = Principal;
+        double payment = MonthlyPayment;
         int counter = 0;
         int repeatLimit = 100000;
 
         while(residual > 0 && counter++ < repeatLimit)
         {
-            residual *= (1 + interestRate);
+            residual *= (1 + InterestRate);
             if (extraPayments.Contains(counter))
             {
                 residual -= (double)extraPayments[counter];
                 sum += (double)extraPayments[counter];
             }
-            payment = residual >= monthlyPayment ? monthlyPayment : residual;
+            payment = residual >= MonthlyPayment ? MonthlyPayment : residual;
             residual -= payment;
             sum += payment;
         }

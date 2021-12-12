@@ -5,7 +5,8 @@ namespace app.Models
 {
     public class Mortgage
     {
-        public static List<string> examples = new List<string>();
+        //public static List<string> examples = new List<string>();
+        public static List<MortgageCalculator> userExamples = new List<MortgageCalculator<>();
         public Mortgage()
         {
             Principal = 0.ToString();
