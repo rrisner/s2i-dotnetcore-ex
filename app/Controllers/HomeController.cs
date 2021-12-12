@@ -35,7 +35,7 @@ namespace app.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
         
-        [HttpPost]
+        /*[HttpPost]
         public ActionResult Create(FormCollection formCollection)
         {
             foreach (string key in formCollection.Keys)
@@ -75,6 +75,12 @@ namespace app.Controllers
          
             //return Content();
             return View();
+        }*/
+
+        [Http.HttpPost]
+        public ActionResult SetMortgageDetails(double principal, double interestRate, double monthyPayment, double extraPayment, double extraPaymentMonth)
+        {
+            Mortgage.examples.Add("That worked!!!");
         }
     }
 }

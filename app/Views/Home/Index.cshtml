@@ -1,7 +1,6 @@
 ﻿@{
-    @model EmployeeTest;
+    @model app.Models.Mortgage;
     ViewData["Title"] = "Home Page";
-    double variable = app.Program.richardsMethod();
 
     System.Collections.Generic.List<double> amounts = new System.Collections.Generic.List<double>();
     System.Collections.Generic.List<int> months = new System.Collections.Generic.List<int>();
@@ -46,38 +45,65 @@
     amounts.Add(tuple.Item1);
     months.Add(tuple.Item2);
 
-    //app.Models.EmployeeTest.knownEmployees.Add("You last reloaded the page at " + System.DateTime.Now.ToString()); //add at least some data to collection for debug
 
 }
 
 <div class="text-center">
     <h1 class="display-4">Richard's Simulated Mortgate Payoff Calculator</h1>
-    <p>Hello! My name is Richard. I unfortunately do not yet have enough experience with HTML to return user input to my program, but I can still provide a simulated experience by calling my methods with preselected values. Enjoy!</p>
+    <!--><p>Hello! My name is Richard. I unfortunately do not yet have enough experience with HTML to return user input to my program, but I can still provide a simulated experience by calling my methods with preselected values. Enjoy!</p></!-->
 
-    <p>These are the employees I know about so far:</p>
-    @foreach (string every in app.Models.EmployeeTest.knownEmployees)
+    <p>These are the Mortgages I know about so far:</p>
+    @foreach (string every in app.Models.Mortgage.examples)
     {
-        <p>Next employee is: @every</p>
+        <p>Next mortgage is: @every</p>
     }
 
 
-    @using (Html.BeginForm()) {
+    <!-->@using (Html.BeginForm()) {
         @Html.ValidationSummary(true)
 
         <fieldset>
             <legend>Employee</legend>
             <div class="editor-label">
-            @Html.LabelFor(model => model.Name)
+            @Html.LabelFor(model => model.Principal)
             </div>
             <div class="editor-label">
-            @Html.TextBoxFor(model => model.Name)
-            @Html.ValidationMessageFor(model => model.Name)
+            @Html.TextBoxFor(model => model.Principal)
+            @Html.ValidationMessageFor(model => model.Principal)
             </div>
 
             <p>
                 <input type="submit" value="Create" />
             </p>
 
+        </fieldset>
+    }</!-->
+
+    @using (Html.BeginForm()) {
+        <fieldset>
+        <label>Principal</label>
+        <input type="number" name="Principal" placeholder="Mortgage Principal Amount" />
+        <br />
+
+        <label>Interest Rate</label>
+        <input type="number" name="InterestRate" placeholder="Interest Rate (3.0 = 3%)" />
+        <br />
+
+        <label>Monthly Payment</label>
+        <input type="number" name="MonthlyPayment" placeholder="Monthly Payment Amount" />
+        <br />
+
+        <label>Extra Payment</label>
+        <input type="number" name="ExtraPayment" placeholder="Extra Payment Amount" />
+        <br />
+
+        <label>Extra Payment Month</label>
+        <input type="number" name="ExtraPaymentMonth" placeholder="Month at which to make payment" />
+        <br />
+
+        <p>
+            <input type="submit" value="SetMortgageDetails" method="post"/>
+        </p>
         </fieldset>
     }
 
