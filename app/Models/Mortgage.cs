@@ -11,7 +11,7 @@ namespace app.Models
             Principal = 0;
             InterestRate = 0;
             MonthlyPayment = 0;
-            ExtraPayments = 0;
+            ExtraPayment = 0;
             ExtraPaymentMonth = 0;
         }
 
