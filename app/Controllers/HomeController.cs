@@ -77,10 +77,16 @@ namespace app.Controllers
             return View();
         }*/
 
-        [Http.HttpPost]
-        public ActionResult SetMortgageDetails(double principal, double interestRate, double monthyPayment, double extraPayment, double extraPaymentMonth)
+        [HttpPost]
+        public ActionResult SetMortgageDetails(double Principal, double InterestRate, double MonthyPayment, double ExtraPayment, double ExtraPaymentMonth)
         {
             Mortgage.examples.Add("That worked!!!");
+            Mortgage.examples.Add(Principal.ToString());
+            Mortgage.examples.Add(InterestRate.ToString());
+            Mortgage.examples.Add(MonthlyPayment.ToString());
+            Mortgage.examples.Add(ExtraPayment.ToString());
+            Mortgage.examples.Add(ExtraPaymentMonth.ToString());
+
         }
     }
 }
