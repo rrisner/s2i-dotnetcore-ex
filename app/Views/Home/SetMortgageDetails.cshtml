@@ -21,7 +21,7 @@
 
     <h2>Custom Scenario Results:</h2>
     <p>Principal: $@(System.String.Format("{0:0,0.00}", yourResult.Principal))</p>
-    <p>Interest Rate: @(System.String.Format("{0.00}", yourResult.OriginalInterestRate*100.0))%</p>
+    <p>Interest Rate: @(System.String.Format("{0:0.00}", yourResult.OriginalInterestRate*100.0))%</p>
     <p>Monthly Payment: $@(System.String.Format("{0:0,0.00}", yourResult.MonthlyPayment))</p>
     <p>Months to Payoff: @(months[0].ToString())</p>
     <p>Total Amount Paid: $@(System.Math.Round(amounts[0], 2))</p>

@@ -56,16 +56,16 @@
     @using (Html.BeginForm("SetMortgageDetails", "Home", FormMethod.Post)) {
         <fieldset>
         <label>Principal</label>
-        @Html.TextBoxFor(m => m.Principal)
+        $@Html.TextBoxFor(m => m.Principal)
         <br />
         <label>Interest Rate</label>
-        @Html.TextBoxFor(m => m.InterestRate)
+        @Html.TextBoxFor(m => m.InterestRate)%
         <br />
         <label>Monthly Payment</label>
-        @Html.TextBoxFor(m => m.MonthlyPayment)
+        $@Html.TextBoxFor(m => m.MonthlyPayment)
         <br />
         <label>Extra Payment</label>
-        @Html.TextBoxFor(m => m.ExtraPayment)
+        $@Html.TextBoxFor(m => m.ExtraPayment)
         <br />
         <label>Extra Payment Month</label>
         @Html.TextBoxFor(m => m.ExtraPaymentMonth)
@@ -74,51 +74,51 @@
         </p>
         </fieldset>
     }
-
+    <br />
 
     <h2>Scenario 1</h2>
-    <p>Principal: $180,000</p>
-    <p>Interest Rate: 3.5%</p>
-    <p>Monthly Payment: $1000</p>
+    <p>Principal: $180,000.00</p>
+    <p>Interest Rate: 3.50%</p>
+    <p>Monthly Payment: $1,000.00</p>
     <p>Months to Payoff: @(months[0].ToString())</p>
     <p>Total Amount Paid: $@(System.Math.Round(amounts[0], 2))</p>
-    <p><strong>Hypothetical: Pay an additional $2000 at month 12</strong></p>
+    <p><strong>Hypothetical: Pay an additional $2,000.00 at month 12</strong></p>
     <p>Months to Payoff: @(months[1].ToString())</p>
     <p>Total Amount Paid: $@(System.Math.Round(amounts[1], 2))</p>
     <p>Months Saved: @(months[0]-months[1])</p>
     <p>Net Savings: $@(System.Math.Round(amounts[0]-amounts[1], 2))</p>
 
     <h2>Scenario 2</h2>
-    <p>Principal: $180,000</p>
-    <p>Interest Rate: 3.5%</p>
-    <p>Monthly Payment: $1000</p>
+    <p>Principal: $180,000.00</p>
+    <p>Interest Rate: 3.50%</p>
+    <p>Monthly Payment: $1,000.00</p>
     <p>Months to Payoff: @(months[2].ToString())</p>
     <p>Total Amount Paid: $@(System.Math.Round(amounts[2], 2))</p>
-    <p><strong>Hypothetical: Pay an additional $2000 at month 24</strong></p>
+    <p><strong>Hypothetical: Pay an additional $2,000.00 at month 24</strong></p>
     <p>Months to Payoff: @(months[3].ToString())</p>
     <p>Total Amount Paid: $@(System.Math.Round(amounts[3], 2))</p>
     <p>Months Saved: @(months[2]-months[3])</p>
     <p>Net Savings: $@(System.Math.Round(amounts[2]-amounts[3], 2))</p>
 
     <h2>Scenario 3</h2>
-    <p>Principal: $300,000</p>
+    <p>Principal: $300,000.00</p>
     <p>Interest Rate: 3.25%</p>
-    <p>Monthly Payment: $1500</p>
+    <p>Monthly Payment: $1,500.00</p>
     <p>Months to Payoff: @(months[4].ToString())</p>
     <p>Total Amount Paid: $@(System.Math.Round(amounts[4], 2))</p>
-    <p><strong>Hypothetical: Pay an additional $5000 at month 60</strong></p>
+    <p><strong>Hypothetical: Pay an additional $5,000.00 at month 60</strong></p>
     <p>Months to Payoff: @(months[5].ToString())</p>
     <p>Total Amount Paid: $@(System.Math.Round(amounts[5], 2))</p>
     <p>Months Saved: @(months[4]-months[5])</p>
     <p>Net Savings: $@(System.Math.Round(amounts[4]-amounts[5], 2))</p>
 
     <h2>Scenario 4</h2>
-    <p>Principal: $300,000</p>
+    <p>Principal: $300,000.00</p>
     <p>Interest Rate: 3.25%</p>
-    <p>Monthly Payment: $1500</p>
+    <p>Monthly Payment: $1,500.00</p>
     <p>Months to Payoff: @(months[6].ToString())</p>
     <p>Total Amount Paid: $@(System.Math.Round(amounts[6], 2))</p>
-    <p><strong>Hypothetical: Pay an additional $5000 at month 120</strong></p>
+    <p><strong>Hypothetical: Pay an additional $5,000.00 at month 120</strong></p>
     <p>Months to Payoff: @(months[7].ToString())</p>
     <p>Total Amount Paid: $@(System.Math.Round(amounts[7], 2))</p>
     <p>Months Saved: @(months[6]-months[7])</p>
