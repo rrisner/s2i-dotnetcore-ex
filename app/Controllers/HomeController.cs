@@ -78,7 +78,7 @@ namespace app.Controllers
         }*/
 
         [HttpPost]
-        public ActionResult SetMortgageDetails(double Principal, double InterestRate, double MonthyPayment, double ExtraPayment, double ExtraPaymentMonth)
+        public ActionResult SetMortgageDetails(double Principal, double InterestRate, double MonthlyPayment, double ExtraPayment, double ExtraPaymentMonth)
         {
             Mortgage.examples.Add("That worked!!!");
             Mortgage.examples.Add(Principal.ToString());
