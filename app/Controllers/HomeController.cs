@@ -89,7 +89,7 @@ namespace app.Controllers
             int.TryParse(mortgage.ExtraPaymentMonth, out paymentMonth);
             
             MortgageCalculator recent = new MortgageCalculator(principal, rate, payment);
-            recent.addExtraPayment(paymentMonth, out extra);
+            recent.addExtraPayment(paymentMonth, extra);
 
             Mortgage.examples.Add(recent);
 
