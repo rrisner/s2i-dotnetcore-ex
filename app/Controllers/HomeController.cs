@@ -87,6 +87,7 @@ namespace app.Controllers
             Mortgage.examples.Add(ExtraPayment.ToString());
             Mortgage.examples.Add(ExtraPaymentMonth.ToString());
 
+            return View();
         }
     }
 }
