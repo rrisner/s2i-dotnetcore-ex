@@ -90,7 +90,7 @@ namespace app.Controllers
             return View();
         }
 
-        [HttpPost]
+        /*[HttpPost]
         public ActionResult SetMortgageDetails(string Principal, string InterestRate, string MonthlyPayment, string ExtraPayment, string ExtraPaymentMonth)
         {
             Mortgage.examples.Add("That worked!!!");
@@ -101,6 +101,6 @@ namespace app.Controllers
             Mortgage.examples.Add(ExtraPaymentMonth.ToString());
 
             return View();
-        }
+        }*/
     }
 }

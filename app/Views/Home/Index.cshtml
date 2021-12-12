@@ -56,7 +56,7 @@
         <p>Next mortgage is: @every</p>
     }
 
-    @using (Html.BeginForm("SetMortgageDetails", "Home", FormMethod.Post)) {
+    @using (Html.BeginForm("SetMortgageDetails", "HomeController", FormMethod.Post)) {
         <fieldset>
         <label>Principal</label>
         @Html.TextBoxFor(m => m.Principal)
