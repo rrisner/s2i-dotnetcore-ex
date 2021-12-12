@@ -27,8 +27,8 @@
     <p><strong>Hypothetical: Pay an additional $@(System.String.Format("{0:0,0.00}", yourResult.ExtraPaymentAmount)) at month @(yourResult.ExtraPaymentMonth)</strong></p>
     <p>Months to Payoff: @(months[1].ToString())</p>
     <p>Total Amount Paid: $@(System.String.Format("{0:0,0.00}", System.Math.Round(amounts[1], 2)))</p>
-    <p>Months Saved: @(months[0]-months[1])</p>
-    <p>Net Savings: $@(System.String.Format("{0:0,0.00}", System.Math.Round(amounts[0]-amounts[1], 2)))</p>
+    <p><strong>Months Saved: @(months[0]-months[1])</strong></p>
+    <p><strong>Net Savings: $@(System.String.Format("{0:0,0.00}", System.Math.Round(amounts[0]-amounts[1], 2)))</strong></p>
 
 </div>
 
