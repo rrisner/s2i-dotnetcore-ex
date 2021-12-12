@@ -1,0 +1,35 @@
+@{
+    @model app.Models.Mortgage;
+    ViewData["Title"] = "Your Calculation Results";
+
+    System.Collections.Generic.List<double> amounts = new System.Collections.Generic.List<double>();
+    System.Collections.Generic.List<int> months = new System.Collections.Generic.List<int>();
+
+    MortgageCalculator calc1A = new MortgageCalculator(180000, .035, 1000);
+    
+}
+
+<div class="text-center">
+    <h1 class="display-4">Richard's Simulated Mortgate Payoff Calculator</h1>
+    <h2>Your calculation:</h2>
+
+    <p>These are the Mortgages I know about so far:</p>
+    @foreach (string every in app.Models.Mortgage.examples)
+    {
+        <p>Next mortgage is: @every</p>
+    }
+
+    <h2>Custom Scenario Results:</h2>
+    <p>Principal: $180,000</p>
+    <p>Interest Rate: 3.5%</p>
+    <p>Monthly Payment: $1000</p>
+    <p>Months to Payoff: @(months[0].ToString())</p>
+    <p>Total Amount Paid: $@(System.Math.Round(amounts[0], 2))</p>
+    <p><strong>Hypothetical: Pay an additional $2000 at month 12</strong></p>
+    <p>Months to Payoff: @(months[1].ToString())</p>
+    <p>Total Amount Paid: $@(System.Math.Round(amounts[1], 2))</p>
+    <p>Months Saved: @(months[0]-months[1])</p>
+    <p>Net Savings: $@(System.Math.Round(amounts[0]-amounts[1], 2))</p>
+
+</div>
+
