@@ -15,6 +15,7 @@ public class MortgageCalculator
     public MortgageCalculator() {}
     public MortgageCalculator(double Principal, double InterestRate, double MonthlyPayment)
     {
+        InterestRate /= 100.0;
         this.Principal = Principal;
         this.OriginalInterestRate = InterestRate;
         this.InterestRate = InterestRate / 12.0;
