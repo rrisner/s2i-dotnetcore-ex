@@ -5,7 +5,7 @@
     System.Collections.Generic.List<double> amounts = new System.Collections.Generic.List<double>();
     System.Collections.Generic.List<int> months = new System.Collections.Generic.List<int>();
 
-    MortgageCalculator calc1A = new MortgageCalculator(180000, .035, 1000);
+    MortgageCalculator calc1A = new MortgageCalculator(180000, .035*100, 1000);
     calc1A.addExtraPayment(12, 2000);
 
     var tuple = calc1A.sumTotalCosts();
@@ -15,7 +15,7 @@
     amounts.Add(tuple.Item1);
     months.Add(tuple.Item2);
 
-    MortgageCalculator calc1B = new MortgageCalculator(180000, .035, 1000);
+    MortgageCalculator calc1B = new MortgageCalculator(180000, .035*100, 1000);
     calc1B.addExtraPayment(24, 2000);
 
     tuple = calc1B.sumTotalCosts();
@@ -25,7 +25,7 @@
     amounts.Add(tuple.Item1);
     months.Add(tuple.Item2);
 
-    MortgageCalculator calc2A = new MortgageCalculator(300000, .0325, 1500);
+    MortgageCalculator calc2A = new MortgageCalculator(300000, .0325*100, 1500);
     calc2A.addExtraPayment(60, 5000);
 
     tuple = calc2A.sumTotalCosts();
@@ -35,7 +35,7 @@
     amounts.Add(tuple.Item1);
     months.Add(tuple.Item2);
 
-    MortgageCalculator calc2B = new MortgageCalculator(300000, .0325, 1500);
+    MortgageCalculator calc2B = new MortgageCalculator(300000, .0325*100, 1500);
     calc2B.addExtraPayment(120, 5000);
 
     tuple = calc2B.sumTotalCosts();
